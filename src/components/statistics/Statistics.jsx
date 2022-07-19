@@ -3,7 +3,7 @@ import { Container, Title, List, Item,getRandomColor,Label,Percentage} from "./S
 export const Statistics = ({ title, stats }) => {
 
  return  ( <Container>
-   {title.length > 0 && (<Title>{title}</Title>)}
+   {title && (<Title>{title}</Title>)}
    <List>
      {
        stats.map(stat=> <Item key={stat.id} img={getRandomColor()}>
