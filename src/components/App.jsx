@@ -45,21 +45,34 @@ User.propTypes={
   })
   
 }
-
 Statistics.propTypes = {
-  id: PropTypes.string,
-  label:PropTypes.string,
-  percentage:PropTypes.number
-}
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    label:PropTypes.string.isRequired,
+    percentage:PropTypes.number.isRequired
+    })
+  ),
+};
+
 FriendList.propTypes = {
-  avatar: PropTypes.string,
-  name: PropTypes.string,
-  isOnline: PropTypes.bool,
-  id:PropTypes.number
+  stats: PropTypes.arrayOf(
+     PropTypes.shape({
+  avatar: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  isOnline: PropTypes.bool.isRequired,
+  id: PropTypes.number.isRequired
+     })
+  ),
 }
 TransactionHistory.propTypes = {
-  id: PropTypes.string,
-  type: PropTypes.string,
-  amount: PropTypes.number,
-  currency:PropTypes.string
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+  id: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  amount: PropTypes.number.isRequired,
+  currency: PropTypes.string.isRequired
+})
+),
 }
