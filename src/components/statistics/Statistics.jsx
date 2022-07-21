@@ -1,5 +1,5 @@
 import { Container, Title, List, Item,getRandomColor,Label,Percentage} from "./Statistics.styled"
-
+import PropTypes from "prop-types";
 export const Statistics = ({ title, stats }) => {
 
  return  ( <Container>
@@ -15,3 +15,13 @@ export const Statistics = ({ title, stats }) => {
  </List>
  </Container>)
 }
+Statistics.propTypes = {
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    label:PropTypes.string.isRequired,
+    percentage:PropTypes.number.isRequired
+    })
+  ),
+};
